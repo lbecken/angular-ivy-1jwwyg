@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="nurse-board">
+    <h3>Nurse Board</h3>
+    <div class="main" (click)="clickNurse()">
+      <div *ngIf="stateBringPatient"><span class="blue">(Bell) Patient called by surgical unit</span></div>
+      <div *ngIf="stateCannotBringPatient" class="red">(cancel) Request bring patient rejected</div>
+      <div *ngIf="stateCanBringPatient"><span class="bonhomme">(bonhomme)</span><span class="blue">Patient on the way to the surgical unit</span></div>
+    </div>
+  </div>
+  <div class="surgery-board">
+    <h3>Surgery Board</h3>
+    <div class="main" (click)="clickSurgery()">
+      <div *ngIf="stateCallPatient" class="blue">(Call)</div>
+      <div *ngIf="stateBringPatient" class="blue">(((Called)))</div>
+      <div *ngIf="stateCannotBringPatient" class="red">(Call) U2S</div>
+      <div class="bonhomme" *ngIf="stateCanBringPatient">(bonhomme)</div>
+    </div>
+  </div>
+</div>
